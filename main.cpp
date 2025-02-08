@@ -7,7 +7,7 @@ private:
 	int size = 0;
 	int full_size = 10;
 	void resize() {
-		full_size += full_size + 1;
+		full_size += 1;
 		int* new_data = new int[full_size];
 		for (int i = 0; i < size; i++) {
 			new_data[i] = data[i];
@@ -15,6 +15,8 @@ private:
 		delete[] data;
 		data = new_data;
 	}
+
+
 public:
 	Queue()
 	{
@@ -43,6 +45,7 @@ public:
 
 	bool is_full() { return size == full_size; }
 	bool is_empty() { return size == 0; }
+
 	void enqueue(int value)
 	{
 		if (is_full()) {
@@ -53,17 +56,17 @@ public:
 	}
 
 	void dequeue() {
-		if (is_empty())
-		{
+		if (is_empty()) {
 			cout << "Queue is empty" << endl;
+			return;
 		}
 		int value = data[0];
-		for (int i = 0; i < size - 1; i++)
-		{
+		for (int i = 0; i < size - 1; i++) {
 			data[i] = data[i + 1];
 		}
 		size--;
 	}
+
 
 	int front() {
 		if (is_empty())
@@ -81,6 +84,18 @@ public:
 		}
 		return data[size - 1];
 	}
+	void show() {
+		if (is_empty())
+		{
+			cout << "Queue is empty" << endl;
+			
+		}
+		for (int i = 0; i < size; i++)
+		{
+			cout << data[i] << " ";
+		}
+		cout << endl;
+	}
 };
 
 int main() {
@@ -96,4 +111,18 @@ int main() {
 	q.dequeue();
 	cout << "front element = " << q.front() << endl;
 	cout << "back element = " << q.back() << endl;
+	q.show();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.show();
+	for (int i = 0; i < 22; i++)
+	{
+		q.enqueue(i);
+	}
+	if (q.is_full())
+	{
+		cout << "Queue is full" << endl;
+	}
 }
