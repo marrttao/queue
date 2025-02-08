@@ -1,19 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-// IDK why error when not std:: in cout when i have using namespace std;
-
 class Queue {
 private:
 
@@ -106,11 +93,9 @@ public:
 
 	void PullHighestPriorityElement() {
 		if (is_empty()) {
-			std::cout << "Queue is empty" << endl;
+			cout << "Queue is empty" << endl;
 			return;
 		}
-		// delete priority element
-
 		if (!isSorted) {
 			Element max = GetPriorityElement();
 			for (int i = 0; i < size; i++) {
@@ -133,7 +118,7 @@ public:
 
 	int front() {
 		if (is_empty()) {
-			std::cout << "Queue is empty" << endl;
+			cout << "Queue is empty" << endl;
 			return int();
 		}
 		if (!isSorted) {
@@ -146,7 +131,7 @@ public:
 
 	int back() {
 		if (is_empty()) {
-			std::cout << "Queue is empty" << endl;
+			cout << "Queue is empty" << endl;
 			return int();
 		}
 		
@@ -162,11 +147,11 @@ public:
 
 	void show() {
 		if (is_empty()) {
-			std::cout << "Queue is empty" << endl;
+			cout << "Queue is empty" << endl;
 			return;
 		}
 		for (int i = 0; i < size; i++) {
-			std::cout << "Value: " << data[i].value << ", Priority: " << data[i].priority << endl;
+			cout << "Value: " << data[i].value << ", Priority: " << data[i].priority << endl;
 		}
 	}
 };
@@ -179,11 +164,11 @@ int main() {
 	q.InsertWithPriority(4, 2);
 	q.InsertWithPriority(5, 1);
 
-	std::cout << "front element = " << q.front() << endl;
-	std::cout << "back element = " << q.back() << endl;
+	cout << "front element = " << q.front() << endl;
+	cout << "back element = " << q.back() << endl;
 	q.PullHighestPriorityElement();
-	std::cout << "front element = " << q.front() << endl;
-	std::cout << "back element = " << q.back() << endl;
+	cout << "front element = " << q.front() << endl;
+	cout << "back element = " << q.back() << endl;
 	q.show();
 	q.PullHighestPriorityElement();
 	q.PullHighestPriorityElement();
@@ -194,7 +179,7 @@ int main() {
 		q.InsertWithPriority(i, i);
 	}
 	if (q.is_full()) {
-		std::cout << "Queue is full" << endl;
+		cout << "Queue is full" << endl;
 	}
 }
 
@@ -364,7 +349,7 @@ int main() {
 //
 //    void PullHighestPriorityElement() {
 //        if (is_empty()) {
-//            std::cout << "Queue is empty" << endl;
+//           cout << "Queue is empty" << endl;
 //            return;
 //        }
 //        // Удаляем элемент с наивысшим приоритетом
@@ -389,7 +374,7 @@ int main() {
 //
 //    int front() {
 //        if (is_empty()) {
-//            std::cout << "Queue is empty" << endl;
+//            cout << "Queue is empty" << endl;
 //            return int();
 //        }
 //        if (!isSorted) {
@@ -402,7 +387,7 @@ int main() {
 //
 //    int back() {
 //        if (is_empty()) {
-//            std::cout << "Queue is empty" << endl;
+//            cout << "Queue is empty" << endl;
 //            return int();
 //        }
 //        if (!isSorted) {
@@ -415,11 +400,11 @@ int main() {
 //
 //    void show() {
 //        if (is_empty()) {
-//            std::cout << "Queue is empty" << endl;
+//           cout << "Queue is empty" << endl;
 //            return;
 //        }
 //        for (int i = 0; i < size; i++) {
-//            std::cout << "Value: " << data[i].value << ", Priority: " << data[i].priority << endl;
+//            cout << "Value: " << data[i].value << ", Priority: " << data[i].priority << endl;
 //        }
 //    }
 //};
@@ -432,11 +417,11 @@ int main() {
 //    q.InsertWithPriority(4, 2);
 //    q.InsertWithPriority(5, 1);
 //
-//    std::cout << "front element = " << q.front() << endl;
-//    std::cout << "back element = " << q.back() << endl;
+//    cout << "front element = " << q.front() << endl;
+//    cout << "back element = " << q.back() << endl;
 //    q.PullHighestPriorityElement();
-//    std::cout << "front element = " << q.front() << endl;
-//    std::cout << "back element = " << q.back() << endl;
+//    cout << "front element = " << q.front() << endl;
+//    cout << "back element = " << q.back() << endl;
 //    q.show();
 //    q.PullHighestPriorityElement();
 //    q.PullHighestPriorityElement();
@@ -447,6 +432,6 @@ int main() {
 //        q.InsertWithPriority(i, i);
 //    }
 //    if (q.is_full()) {
-//        std::cout << "Queue is full" << endl;
+//        cout << "Queue is full" << endl;
 //    }
 //}
