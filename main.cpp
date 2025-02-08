@@ -1,6 +1,19 @@
 #include <iostream>
 using namespace std;
 
+
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+// IDK why error when not std:: in cout when i have using namespace std;
+
 class Queue {
 private:
 
@@ -184,6 +197,8 @@ int main() {
 		std::cout << "Queue is full" << endl;
 	}
 }
+
+
 
 
 // ai said to add constructors and operators of copy and move i wrote it but i understand that not good i will read doc about this
