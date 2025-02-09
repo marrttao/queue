@@ -33,14 +33,24 @@ public:
         mt19937 gen(rd());
         uniform_int_distribution<> dis(100, 500);
         
-        
+        int* PrintTotalTime = new int;
+		*PrintTotalTime = 0;
 		for (int i = 0; i < c.PrintsValue; i++) {
+            
             time_to_print = dis(gen);
+			*PrintTotalTime += time_to_print;
             Sleep(time_to_print);
 			cout << "Printing page " << i + 1 << endl;
 		}
 		cout << endl << "Printing for client completed" << endl << endl;
+		show_stats(*PrintTotalTime, c.PrintsValue);
+		delete PrintTotalTime;
     }
+
+    void show_stats(int TotalTime, int PrintsValue) {
+		cout << "Total time to print: " << TotalTime << "ms" << endl;
+		cout << "Total number of pages printed: " << this->PrintsValue << endl;
+	}
 };
 
 template <typename T>
@@ -140,7 +150,7 @@ public:
         if (!isSorted) {
             Client<int> max = GetPriorityElement();
             for (int i = 0; i < size; i++) {
-                if (data[i].PrintsValue == max.PrintsValue && data[i].priority == max.priority) {
+                if (data[i].priority == max.priority) {
                     for (int j = i; j < size - 1; j++) {
                         data[j] = data[j + 1];
                     }
@@ -198,13 +208,22 @@ public:
 };
 
 int main() {
-    Queue<int> printerQueue;
 
-   
+	// i havent compare queue with printer cause i do like in shop, i have queue and printer is printer
+    // i havent compare queue with printer cause i do like in shop, i have queue and printer is printer
+    // i havent compare queue with printer cause i do like in shop, i have queue and printer is printer
+    // i havent compare queue with printer cause i do like in shop, i have queue and printer is printer
+    // i havent compare queue with printer cause i do like in shop, i have queue and printer is printer
+    // i havent compare queue with printer cause i do like in shop, i have queue and printer is printer
+
+
+    Queue<int> printerQueue;
     Client<int> client1(2);
     client1.PrintsValue = 10;
     Client<int> client2(3);
     client2.PrintsValue = 5;
+    Client<int> client22(3);
+    client22.PrintsValue = 7;
     Client<int> client3(1);
     client3.PrintsValue = 20;
 
@@ -212,6 +231,8 @@ int main() {
     printerQueue.InsertWithPriority(client1.PrintsValue, client1.priority);
     printerQueue.InsertWithPriority(client2.PrintsValue, client2.priority);
     printerQueue.InsertWithPriority(client3.PrintsValue, client3.priority);
+	printerQueue.InsertWithPriority(client22.PrintsValue, client22.priority);
+
 
    
     cout << endl << "Initial Queue:" << endl;
@@ -223,6 +244,7 @@ int main() {
 
     cout << endl << "Queue after processing one client : " << endl;
     printerQueue.show();
+    printerQueue.PullHighestPriorityElement();
     printerQueue.PullHighestPriorityElement();
     printerQueue.PullHighestPriorityElement();
 
