@@ -99,7 +99,7 @@ public:
 		if (!isSorted) {
 			Element max = GetPriorityElement();
 			for (int i = 0; i < size; i++) {
-				if (data[i].value == max.value && data[i].priority == max.priority) {
+				if (data[i].priority == max.priority) {
 					for (int j = i; j < size - 1; j++) {
 						data[j] = data[j + 1];
 					}
